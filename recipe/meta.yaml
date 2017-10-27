@@ -12,11 +12,12 @@ build:
   number: 0
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
-    - future
-
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   run:
     - python
     - future
