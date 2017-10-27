@@ -28,13 +28,21 @@ requirements:
 test:
   imports:
     - atom
+    - atom.catom
     - atom.datastructures
+    - atom.datastructures.sortedmap
 
 about:
   home: https://github.com/nucleic/atom
   license: BSD-3-Clause
   license_file: LICENSE
   summary: Memory efficient Python objects
+  description: |
+    Atom is a framework for creating memory efficient Python objects
+    with enhanced features such as dynamic initialization, validation, and
+    change notification for object attributes.
+  doc_url: http://flight-manual.atom.io/
+  dev_url: https://github.com/nucleic/atom
 
 extra:
   recipe-maintainers:
