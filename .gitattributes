@@ -3,5 +3,5 @@
 *.patch binary
 *.diff binary
 meta.yaml text eol=lf
-build.sh text eol=lf
-bld.bat text eol=crlf
+recipe/build.sh text eol=lf
+recipe/bld.bat text eol=crlf
