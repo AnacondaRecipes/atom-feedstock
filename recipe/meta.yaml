@@ -35,7 +35,7 @@ about:
   home: https://github.com/nucleic/atom
   license: BSD 3-Clause
   license: BSD
-  license_file: COPYING.txt
+  #license_file: COPYING.txt
   summary: Memory efficient Python objects
   description: |
     Atom is a framework for creating memory efficient Python objects
