@@ -21,6 +21,7 @@ requirements:
     - pip
     - setuptools
     - setuptools_scm
+    - wheel
     - cppy
   run:
     - python
@@ -31,6 +32,8 @@ test:
     - atom.catom
     - atom.datastructures
     - atom.datastructures.sortedmap
+  commands:
+    - pip check
 
 about:
   home: https://github.com/nucleic/atom
