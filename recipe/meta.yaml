@@ -28,6 +28,9 @@ requirements:
     - python
 
 test:
+  requires:
+    - pip
+    - python
   imports:
     - atom
     - atom.catom
