@@ -1,6 +1,6 @@
 {% set name = "atom" %}
-{% set version = "0.6.0" %}
-{% set sha256 = "df65a654744ccdc4843ce09c38612fd8f702c84be501b1d955c3ac0b9ad28dc5" %}
+{% set version = "0.8.2" %}
+{% set sha256 = "3155b7a0a286cb5c2bff2929fc2341d071dc9169b0d0ff1f15450ddd57d24c57" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -20,10 +20,10 @@ requirements:
     - python
     - pip
     - setuptools
+    - setuptools_scm
     - cppy
   run:
     - python
-    - future
 
 test:
   imports:
