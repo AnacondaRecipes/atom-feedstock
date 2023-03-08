@@ -51,7 +51,7 @@ about:
     Atom is a framework for creating memory efficient Python objects
     with enhanced features such as dynamic initialization, validation, and
     change notification for object attributes.
-  doc_url: https://github.blog/2022-06-08-sunsetting-atom/
+  doc_url: https://atom.readthedocs.io/
   dev_url: https://github.com/nucleic/atom
 
 extra:
