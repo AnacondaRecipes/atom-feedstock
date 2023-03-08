@@ -21,11 +21,13 @@ requirements:
     - python
     - pip
     - setuptools
-    - setuptools_scm
     - wheel
+    - setuptools_scm
+    - toml
     - cppy
   run:
     - python
+    - typing_extensions  # [py<311]
 
 test:
   requires:
