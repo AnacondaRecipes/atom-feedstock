@@ -24,7 +24,7 @@ requirements:
     - wheel
     - setuptools_scm
     - toml
-    - cppy
+    - cppy 1.2.1
   run:
     - python
     - typing_extensions  # [py<311]
