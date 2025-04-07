@@ -1,18 +1,17 @@
 {% set name = "atom" %}
-{% set version = "0.9.0" %}
-{% set sha256 = "eccc1ab0cc1c6d1ed5b6ecd1e768f8b8727447605bd009a2a0b49b4ee7eb963d" %}
+{% set version = "0.11.0" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 4ab93fc3cc7b6a078253b116e9f6235d2913eb9bb49adbc31a258e1017f2aee0
 
 build:
   number: 0
-  skip: true  # [py<38]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: True  # [py<310]
 
 requirements:
   build:
@@ -20,19 +19,19 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
     - wheel
-    - setuptools_scm
+    - setuptools >=61.2
+    - cppy >=1.2.0
+    # setuptools_scm[toml]>=3.4.3
+    - setuptools_scm >=3.4.3
     - toml
-    - cppy 1.2.1
   run:
     - python
     - typing_extensions  # [py<311]
 
 test:
-  requires:
-    - pip
-    - python
+  source_files:
+    - tests
   imports:
     - atom
     - atom.catom
@@ -40,6 +39,11 @@ test:
     - atom.datastructures.sortedmap
   commands:
     - pip check
+    - pytest -v tests
+  requires:
+    - pip
+    - python
+    - pytest
 
 about:
   home: https://github.com/nucleic/atom
