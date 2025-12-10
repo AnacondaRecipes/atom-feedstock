@@ -16,6 +16,7 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
   host:
@@ -27,7 +28,6 @@ requirements:
     # setuptools_scm[toml]>=3.4.3
     - setuptools_scm >=3.4.3
     - toml
-    - setuptools-scm >=3.4.3
   run:
     - python
     - typing_extensions  # [py<311]
@@ -58,7 +58,7 @@ about:
     Atom is a framework for creating memory efficient Python objects
     with enhanced features such as dynamic initialization, validation, and
     change notification for object attributes.
-  doc_url: https://atom.readthedocs.io/
+  doc_url: https://atom.readthedocs.io
   dev_url: https://github.com/nucleic/atom
 
 extra:
