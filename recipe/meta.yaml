@@ -1,26 +1,29 @@
 {% set name = "atom" %}
-{% set version = "0.11.0" %}
+{% set version = "0.12.1" %}
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4ab93fc3cc7b6a078253b116e9f6235d2913eb9bb49adbc31a258e1017f2aee0
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 2cbfb77939da28879a5432e3b201ac026be85c789c4e96de246a6f6a9f4be57a
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<310]
+  skip: true  # [py<310]
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
   host:
     - python
     - pip
     - wheel
-    - setuptools >=61.2
+    - setuptools >=77.0
     - cppy >=1.2.0
     # setuptools_scm[toml]>=3.4.3
     - setuptools_scm >=3.4.3
@@ -55,7 +58,7 @@ about:
     Atom is a framework for creating memory efficient Python objects
     with enhanced features such as dynamic initialization, validation, and
     change notification for object attributes.
-  doc_url: https://atom.readthedocs.io/
+  doc_url: https://atom.readthedocs.io
   dev_url: https://github.com/nucleic/atom
 
 extra:
