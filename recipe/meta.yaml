@@ -1,5 +1,5 @@
 {% set name = "atom" %}
-{% set version = "0.12.1" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2cbfb77939da28879a5432e3b201ac026be85c789c4e96de246a6f6a9f4be57a
+  sha256: b7273ba41fe45c479c6dcfc0e352195b44f8fe4ba82b4e4ece9a6864b0bb0dd2
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: true  # [py<310]
+  skip: true  # [py<311]
 
 requirements:
   build:
@@ -28,6 +28,7 @@ requirements:
     # setuptools_scm[toml]>=3.4.3
     - setuptools_scm >=3.4.3
     - toml
+    - setuptools-scm >=3.4.3
   run:
     - python
     - typing_extensions  # [py<311]
