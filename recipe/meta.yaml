@@ -1,18 +1,18 @@
 {% set name = "atom" %}
-{% set version = "0.12.1" %}
+{% set version = "0.14.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2cbfb77939da28879a5432e3b201ac026be85c789c4e96de246a6f6a9f4be57a
+  sha256: 2cce57acf950af5e0213f3ae4503aea3d311b4aadf482890e394a1e1cb204c08
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: true  # [py<310]
+  skip: true  # [py<311]
 
 requirements:
   build:
@@ -30,7 +30,6 @@ requirements:
     - toml
   run:
     - python
-    - typing_extensions  # [py<311]
 
 test:
   source_files:
@@ -42,7 +41,7 @@ test:
     - atom.datastructures.sortedmap
   commands:
     - pip check
-    - pytest -v tests
+    - pytest -vv tests
   requires:
     - pip
     - python
